@@ -1,0 +1,49 @@
+﻿@model SistemaGestionRENI.ListCoveniosViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Convenios</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Convenio", null)" class="btn btn-info">Nuevo Convenio</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Clase</th>
+                    <th scope="col">Condición</th>
+                    <th scope="col">Año Firma</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var convenio in Model.Convenios)
+                {
+                    <tr>
+                        <th scope="row">@convenio.Id</th>
+                        <td>@convenio.Nombre</td>
+                        <td>@convenio.ClaseConvenio.Nombre</td>
+                        <td>@convenio.CondicionConvenio.Nombre</td>
+                        <td>@convenio.AnioFirma</td>
+                        <td>
+                            <a class="btn btn-warning" href="@Url.Action("Edit","Convenio", new {Id = convenio.Id})">Modificar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "Convenio", new {Id = convenio.Id})">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+
+
+

@@ -1,0 +1,39 @@
+﻿@model SistemaGestionRENI.ListUnidadMedidaViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Unidades de Medida</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","UnidadMedida", null)" class="btn btn-info">Nueva Unidad de Medida</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        @*<th scope="col">Valor</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var unidadMedida in Model.UnidadesMedida)
+                    {
+                    <tr>
+                        <th scope="row">@unidadMedida.Id</th>
+                        <td>@unidadMedida.Nombre</td>
+                        @*<td>@unidadMedida.Valor</td>*@
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+

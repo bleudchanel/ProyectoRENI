@@ -1,0 +1,43 @@
+﻿@model SistemaGestionRENI.ListProponenteViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Proponentes</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Proponente", null)" class="btn btn-info">Nuevo Proponente</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Dependencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var proponente in Model.Proponentes)
+                    {
+                        <tr>
+                            <th scope="row">@proponente.Id</th>
+                            <td>@proponente.Nombre</td>
+                            <td>@proponente.Dependencia.Abrev</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+
+
+
+

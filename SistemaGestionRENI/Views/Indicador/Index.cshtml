@@ -1,0 +1,41 @@
+﻿@model SistemaGestionRENI.ListIndicadorViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Indicadores</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Indicador", null)" class="btn btn-info">Nuevo Indicador</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Unidad de Medida</th>
+                        <th scope="col">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var indicador in Model.Indicadores)
+                    {
+                    <tr>
+                        <th scope="row">@indicador.Id</th>
+                        <td>@indicador.Nombre</td>
+                        <td>@indicador.UnidadMedida.Nombre</td>
+                        <td>@indicador.Valor</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+

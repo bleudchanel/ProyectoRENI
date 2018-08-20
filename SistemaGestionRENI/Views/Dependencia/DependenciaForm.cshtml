@@ -1,0 +1,50 @@
+﻿@model SistemaGestionRENI.Models.Dependencia
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container">
+        @*<div class="row">
+            <h2>Nueva Dependencia</h2>
+        </div>*@       
+        <div class="row mb-3">
+            <div class="col-md-8 m-auto">
+                <div class="card">
+
+                    @using (Html.BeginForm("Save", "Dependencia", null, FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="card-header">
+                            Nueva Dependencia
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Nombre)
+                                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Abrev)
+                                @Html.TextBoxFor(m => m.Abrev, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Pais)
+                                @Html.TextBoxFor(m => m.Pais, new { @class = "form-control" })
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.EsInterno) Es Dependencia Interna?
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

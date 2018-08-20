@@ -1,0 +1,51 @@
+﻿@model SistemaGestionRENI.ListDependenciaViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Dependencias</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Dependencia", null)" class="btn btn-info">Nueva Dependencia</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Abreviación</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dependencia in Model.Dependencias)
+                    {
+                    <tr>
+                        <th scope="row">@dependencia.Id</th>
+                        <td>@dependencia.Nombre</td>
+                        <td>@dependencia.Abrev</td>
+                        <td>@(dependencia.EsInterno == true ? "Interno" : "Externo")</td>
+                        <td>@dependencia.Pais</td>
+                        <td>
+                            <a class="btn btn-warning" href="@Url.Action("Edit","Dependencia", new {Id = @dependencia.Id})">Modificar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "Dependencia", new {Id = @dependencia.Id})">Eliminar</a>
+
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+
+
+
+
