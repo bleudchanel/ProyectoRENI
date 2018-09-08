@@ -1,0 +1,55 @@
+﻿@model SistemaGestionRENI.ListProponenteExternoViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Proponentes Externos</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","ProponenteExterno", null)" class="btn btn-info">Nuevo Proponente Externo</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Institución</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var proponenteExt in Model.Proponentes)
+                {
+                    <tr>
+                        <th scope="row">@proponenteExt.Id</th>
+                        <td>@proponenteExt.Nombre</td>
+                        <td>@proponenteExt.Descripcion</td>
+                        <td>@proponenteExt.Email</td>
+                        <td>@proponenteExt.Telefono</td>
+                        <td>@proponenteExt.Instituction.Abrev</td>
+                        <td>
+                            <a class="btn btn-warning" href="@Url.Action("Edit","ProponenteExterno", new {Id = proponenteExt.Id})">Modificar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "ProponenteExterno", new {Id = proponenteExt.Id})">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+
+
+
+
+
+

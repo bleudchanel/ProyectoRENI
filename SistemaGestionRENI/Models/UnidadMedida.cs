@@ -12,6 +12,11 @@ namespace SistemaGestionRENI.Models
         [Required]
         [StringLength(250)]
         public string Nombre { get; set; }
+
+        [StringLength(300)]
+        [Display(Name = "Descripción Extendida")]
+        public string Descripcion { get; set; }
+
         //[Required]
         //public decimal Valor { get; set; }
         public bool Activo { get; set; }

@@ -22,5 +22,9 @@ namespace SistemaGestionRENI.Models
         [StringLength(300)]
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
+        [Required]
+        public bool Activo { get; set; }
+        [StringLength(150)]
+        public string Cargo { get; set; }
     }
 }

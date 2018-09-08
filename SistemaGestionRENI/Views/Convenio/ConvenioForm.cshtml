@@ -1,0 +1,165 @@
+﻿@model SistemaGestionRENI.ConvenioFormViewModel
+@{
+    ViewBag.Title = "ConvenioForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        @*<div class="row">
+                <h2>Nueva Dependencia</h2>
+            </div>*@
+        <div class="row mb-3">
+            <div class="col-md-8 m-auto">
+                <div class="card">
+
+                    @using (Html.BeginForm("Save", "Convenio", null, FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="card-header">
+                            Nuevo Convenio
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Nombre)
+                                @Html.TextBoxFor(m => m.Convenio.Nombre, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Nombre)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Descripcion)
+                                @Html.TextAreaFor(m => m.Convenio.Descripcion, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Descripcion)
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.AnioFirma)
+                                    @Html.TextBoxFor(m => m.Convenio.AnioFirma, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.AnioFirma)
+                                </div>
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.Resolucion)
+                                    @Html.TextBoxFor(m => m.Convenio.Resolucion, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.Resolucion)
+                                </div>
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.Correlativo)
+                                    @Html.TextBoxFor(m => m.Convenio.Correlativo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.Correlativo)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.IndicadorId)
+                                    @Html.DropDownListFor(m => m.Convenio.IndicadorId, new SelectList(Model.Indicadores, "Id", "Nombre"), "Seleccione Indicador", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.IndicadorId)
+                                </div>
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.ObjetivoIndicador)
+                                    @Html.TextBoxFor(m => m.Convenio.ObjetivoIndicador, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.ObjetivoIndicador)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.AlcanceConvenioId)
+                                    @Html.DropDownListFor(m => m.Convenio.AlcanceConvenioId, new SelectList(Model.AlcancesConvenios, "Id", "Nombre"), "Seleccione Alcance", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.AlcanceConvenioId)
+                                </div>
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.ClaseConvenioId)
+                                    @Html.DropDownListFor(m => m.Convenio.ClaseConvenioId, new SelectList(Model.ClasesConvenio, "Id", "Nombre"), "Seleccione Clase Convenio", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.ClaseConvenioId)
+                                </div>
+                                <div class="form-group col-md-4">
+                                    @Html.LabelFor(m => m.Convenio.CondicionConvenioId)
+                                    @Html.DropDownListFor(m => m.Convenio.CondicionConvenioId, new SelectList(Model.CondicionesConvenio, "Id", "Nombre"), "Seleccione Condición Convenio", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.CondicionConvenioId)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.VigenciaDesde)
+                                    @Html.TextBoxFor(m => m.Convenio.VigenciaDesde, "{0:d MMM yyyy}", new { @class = "form-control datepicker" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.VigenciaDesde)
+                                </div>
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.VigenciaHasta)
+                                    @Html.TextBoxFor(m => m.Convenio.VigenciaHasta, "{0:d MMM yyyy}", new { @class = "form-control datepicker" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.VigenciaHasta)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.ProponenteIntId)
+                                    @Html.DropDownListFor(m => m.Convenio.ProponenteIntId, new SelectList(Model.ProponentesInterno, "Id", "Nombre"), "Seleccione Proponente Interno", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.ProponenteIntId)
+                                </div>
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.ProponenteExternoId)
+                                    @Html.DropDownListFor(m => m.Convenio.ProponenteExternoId, new SelectList(Model.ProponentesExterno, "Id", "Nombre"), "Seleccione Proponente Externo", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.ProponenteExternoId)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Objetivo)
+                                @Html.TextAreaFor(m => m.Convenio.Objetivo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Objetivo)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Obligaciones)
+                                @Html.TextAreaFor(m => m.Convenio.Obligaciones, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Obligaciones)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Derechos)
+                                @Html.TextAreaFor(m => m.Convenio.Derechos, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Derechos)
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.DependenciaConvenioId)
+                                    @Html.DropDownListFor(m => m.Convenio.DependenciaConvenioId, new SelectList(Model.DependenciasPrincipal, "Id", "Nombre"), "Seleccione Dependencia", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.DependenciaConvenioId)
+                                </div>
+                                <div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.Convenio.InstitucionId)
+                                    @Html.DropDownListFor(m => m.Convenio.InstitucionId, new SelectList(Model.InstitucionesPrincipal, "Id", "Nombre"), "Seleccione Institución", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Convenio.InstitucionId)
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Dependencia1Id)
+                                @Html.DropDownListFor(m => m.Convenio.Dependencia1Id, new SelectList(Model.Dependencias1, "Id", "Nombre"), "Seleccione Dependencia", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Dependencia1Id)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Dependencia2Id)
+                                @Html.DropDownListFor(m => m.Convenio.Dependencia2Id, new SelectList(Model.Dependencias2, "Id", "Nombre"), "Seleccione Dependencia", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Dependencia2Id)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.Dependencia3Id)
+                                @Html.DropDownListFor(m => m.Convenio.Dependencia3Id, new SelectList(Model.Dependencias3, "Id", "Nombre"), "Seleccione Dependencia", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.Dependencia3Id)
+                            </div>
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Convenio.ConvenioPadreId)
+                                @Html.DropDownListFor(m => m.Convenio.ConvenioPadreId, new SelectList(Model.ConveniosPadre, "Id", "Nombre"), "Seleccione Proponente Externo", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Convenio.ConvenioPadreId)
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            @Html.HiddenFor(m => m.Convenio.Id)
+                            @Html.ValidationMessageFor(m => m.Convenio.Id)
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

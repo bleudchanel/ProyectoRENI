@@ -1,0 +1,49 @@
+﻿@model SistemaGestionRENI.ListInstitucionViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Instituciones</h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Institucion", null)" class="btn btn-info">Nueva Institución</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Abreviación</th>
+                        <th scope="col">Ubicación</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Actividad</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var institucion in Model.Instituciones)
+                    {
+                    <tr>
+                        <th scope="row">@institucion.Id</th>
+                        <td>@institucion.Nombre</td>
+                        <td>@institucion.Abrev</td>
+                        <td>@institucion.Ubicacion</td>
+                        <td>@(institucion.EsPrivado == true ? "Privado" : "Estatal")/td>
+                        <td>@institucion.ActividadInstitucion</td>
+                        <td>
+                            <a class="btn btn-warning" href="@Url.Action("Edit","Institucion", new {Id = institucion.Id})">Modificar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "Institucion", new {Id = institucion.Id})">Eliminar</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+

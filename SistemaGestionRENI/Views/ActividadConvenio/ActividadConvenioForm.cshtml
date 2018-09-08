@@ -1,0 +1,71 @@
+﻿@model SistemaGestionRENI.ActividadConvenioViewModel
+@{
+    ViewBag.Title = "ActividadConvenioForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section>
+    <div class="container">
+        @*<div class="row">
+                <h2>Nueva Dependencia</h2>
+            </div>*@
+        <div class="row mb-3">
+            <div class="col-md-8 m-auto">
+                <div class="card">
+
+                    @using (Html.BeginForm("Save", "ActividadConvenio", null, FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="card-header">
+                            Nueva Actividad Convenio
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.Nombre)
+                                @Html.TextBoxFor(m => m.ActividadConvenio.Nombre, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.Nombre)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.Descripcion)
+                                @Html.TextBoxFor(m => m.ActividadConvenio.Descripcion, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.Descripcion)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.Observaciones)
+                                @Html.TextBoxFor(m => m.ActividadConvenio.Observaciones, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.Observaciones)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.Fecha)
+                                @Html.TextBoxFor(m => m.ActividadConvenio.Fecha, "{0:d MMM yyyy}", new { @class = "form-control datepicker" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.Fecha)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.TipoActividadConvenioId)
+                                @Html.DropDownListFor(m => m.ActividadConvenio.TipoActividadConvenioId, new SelectList(Model.TiposActividad, "Id", "Nombre"), "Seleccione Tipo", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.TipoActividadConvenioId)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.IndicadorId)
+                                @Html.DropDownListFor(m => m.ActividadConvenio.IndicadorId, new SelectList(Model.Indicadores, "Id", "Nombre"), "Seleccione Indicador", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.IndicadorId)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ActividadConvenio.Avance)
+                                @Html.TextBoxFor(m => m.ActividadConvenio.Avance, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ActividadConvenio.Avance)
+                            </div>                            
+                        </div>
+                        <div class="card-footer">
+                            @Html.HiddenFor(m => m.ConvenioId)
+                            @Html.HiddenFor(m => m.ActividadConvenio.Id)
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

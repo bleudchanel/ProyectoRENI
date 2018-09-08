@@ -30,6 +30,8 @@ namespace SistemaGestionRENI.Models
             base.OnModelCreating(modelBuilder);
         }
 
+        
+
         public DbSet<UnidadMedida> UnidadMedidaSet { get; set; }
         public DbSet<Indicador> IndicadorSet { get; set; }
         public DbSet<Solicitante> SolicitanteSet { get; set; }
@@ -38,13 +40,19 @@ namespace SistemaGestionRENI.Models
         public DbSet<ClaseConvenio> ClaseConvenioSet { get; set; }
         public DbSet<Convenio> ConvenioSet { get; set; }
         public DbSet<Proponente> ProponenteSet { get; set; }
+        public DbSet<ProponenteExterno> ProponenteExternoSet { get; set; }
         public DbSet<Documento> DocumentoSet { get; set; }
         public DbSet<TipoActividadConvenio> TipoActividadConvenioSet { get; set; }
         public DbSet<ActividadConvenio> ActividadConvenioSet { get; set; }
-        public DbSet<Programa> ProgramaSet { get; set; }
+        public DbSet<Programa> _ProgramaSet { get; set; }
+        public DbSet<ProgramaConvenio> ProgramaConvenioSet { get; set; }
         public DbSet<ActividadPrograma> ActividadProgramaSet { get; set; }
         public DbSet<TipoActividadPrograma> TipoActividadProgramaSet { get; set; }
         public DbSet<TipoPrograma> TipoProgramaSet { get; set; }
+        public DbSet<AlcanceConvenio> AlcanceConvenioSet { get; set; }
+        public DbSet<Institucion> InstitucionSet { get; set; }
+
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

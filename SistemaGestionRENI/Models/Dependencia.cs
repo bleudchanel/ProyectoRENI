@@ -16,11 +16,14 @@ namespace SistemaGestionRENI.Models
         [StringLength(20)]
         [Display(Name = "Abreviación")]
         public string Abrev { get; set; }
-        public bool Estado { get; set; }
-        public bool EsInterno { get; set; }
-        [Required]
-        [StringLength(250)]
-        [Display(Name = "País o Ubicación")]
-        public string Pais { get; set; }
+        public bool Activo { get; set; }
+        public int PadreId { get; set; }
+        public int DependenciaFijoId { get; set; }
+
+        //public bool EsInterno { get; set; }
+        //[Required]
+        //[StringLength(250)]
+        //[Display(Name = "País o Ubicación")]
+        //public string Pais { get; set; }
     }
 }

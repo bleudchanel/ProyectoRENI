@@ -198,13 +198,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActividadConvenioController.cs" />
     <Compile Include="Controllers\CondicionConvenioController.cs" />
     <Compile Include="Controllers\ConvenioController.cs" />
     <Compile Include="Controllers\DependenciaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndicadorController.cs" />
+    <Compile Include="Controllers\InstitucionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProgramaConvenioController.cs" />
     <Compile Include="Controllers\ProponenteController.cs" />
+    <Compile Include="Controllers\ProponenteExternoController.cs" />
     <Compile Include="Controllers\UnidadMedidaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -281,10 +285,99 @@
     <Compile Include="Migrations\201808200516005_IndicadorValor.Designer.cs">
       <DependentUpon>201808200516005_IndicadorValor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808210247253_ActivoProponente.cs" />
+    <Compile Include="Migrations\201808210247253_ActivoProponente.Designer.cs">
+      <DependentUpon>201808210247253_ActivoProponente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808222302206_UnidadMedidaDescripcion.cs" />
+    <Compile Include="Migrations\201808222302206_UnidadMedidaDescripcion.Designer.cs">
+      <DependentUpon>201808222302206_UnidadMedidaDescripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230033152_AlcanceConvenio.cs" />
+    <Compile Include="Migrations\201808230033152_AlcanceConvenio.Designer.cs">
+      <DependentUpon>201808230033152_AlcanceConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230033509_AlcanceFill.cs" />
+    <Compile Include="Migrations\201808230033509_AlcanceFill.Designer.cs">
+      <DependentUpon>201808230033509_AlcanceFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230039122_AddCodigos.cs" />
+    <Compile Include="Migrations\201808230039122_AddCodigos.Designer.cs">
+      <DependentUpon>201808230039122_AddCodigos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230040158_AddCodigosUpdateInsert.cs" />
+    <Compile Include="Migrations\201808230040158_AddCodigosUpdateInsert.Designer.cs">
+      <DependentUpon>201808230040158_AddCodigosUpdateInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230106096_AddCodigos1.cs" />
+    <Compile Include="Migrations\201808230106096_AddCodigos1.Designer.cs">
+      <DependentUpon>201808230106096_AddCodigos1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230117093_AddCodigos2.cs" />
+    <Compile Include="Migrations\201808230117093_AddCodigos2.Designer.cs">
+      <DependentUpon>201808230117093_AddCodigos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230122476_VigenciaHasta.cs" />
+    <Compile Include="Migrations\201808230122476_VigenciaHasta.Designer.cs">
+      <DependentUpon>201808230122476_VigenciaHasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230134339_PkConvenio.cs" />
+    <Compile Include="Migrations\201808230134339_PkConvenio.Designer.cs">
+      <DependentUpon>201808230134339_PkConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230205369_ErroresConRequireds.cs" />
+    <Compile Include="Migrations\201808230205369_ErroresConRequireds.Designer.cs">
+      <DependentUpon>201808230205369_ErroresConRequireds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230240201_CamposExtraConvenio.cs" />
+    <Compile Include="Migrations\201808230240201_CamposExtraConvenio.Designer.cs">
+      <DependentUpon>201808230240201_CamposExtraConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230248507_CamposExtraConvenio1.cs" />
+    <Compile Include="Migrations\201808230248507_CamposExtraConvenio1.Designer.cs">
+      <DependentUpon>201808230248507_CamposExtraConvenio1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230419458_AddTipoActividadConvenioData.cs" />
+    <Compile Include="Migrations\201808230419458_AddTipoActividadConvenioData.Designer.cs">
+      <DependentUpon>201808230419458_AddTipoActividadConvenioData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230456426_ActivoActividadConvenio.cs" />
+    <Compile Include="Migrations\201808230456426_ActivoActividadConvenio.Designer.cs">
+      <DependentUpon>201808230456426_ActivoActividadConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230609397_ProgramaInfo.cs" />
+    <Compile Include="Migrations\201808230609397_ProgramaInfo.Designer.cs">
+      <DependentUpon>201808230609397_ProgramaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809021635220_AddInstitucion2.cs" />
+    <Compile Include="Migrations\201809021635220_AddInstitucion2.Designer.cs">
+      <DependentUpon>201809021635220_AddInstitucion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809021701321_AddPropExterno.cs" />
+    <Compile Include="Migrations\201809021701321_AddPropExterno.Designer.cs">
+      <DependentUpon>201809021701321_AddPropExterno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809031045463_AddConvenioPropExt.cs" />
+    <Compile Include="Migrations\201809031045463_AddConvenioPropExt.Designer.cs">
+      <DependentUpon>201809031045463_AddConvenioPropExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809031103128_AddConvenioPropExt2.cs" />
+    <Compile Include="Migrations\201809031103128_AddConvenioPropExt2.Designer.cs">
+      <DependentUpon>201809031103128_AddConvenioPropExt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809031115005_AddProgramaConvenio22.cs" />
+    <Compile Include="Migrations\201809031115005_AddProgramaConvenio22.Designer.cs">
+      <DependentUpon>201809031115005_AddProgramaConvenio22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809031218516_AddProgramaConvenio3.cs" />
+    <Compile Include="Migrations\201809031218516_AddProgramaConvenio3.Designer.cs">
+      <DependentUpon>201809031218516_AddProgramaConvenio3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ActividadConvenio.cs" />
     <Compile Include="Models\ActividadPrograma.cs" />
+    <Compile Include="Models\AlcanceConvenio.cs" />
     <Compile Include="Models\ClaseConvenio.cs" />
     <Compile Include="Models\CondicionConvenio.cs" />
     <Compile Include="Models\CondicionPrograma.cs" />
@@ -293,9 +386,12 @@
     <Compile Include="Models\Documento.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Indicador.cs" />
+    <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Programa.cs" />
+    <Compile Include="Models\ProgramaConvenio.cs" />
     <Compile Include="Models\Proponente.cs" />
+    <Compile Include="Models\ProponenteExterno.cs" />
     <Compile Include="Models\Solicitante.cs" />
     <Compile Include="Models\TipoActividadConvenio.cs" />
     <Compile Include="Models\TipoActividadPrograma.cs" />
@@ -303,11 +399,18 @@
     <Compile Include="Models\UnidadMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ActividadConvenio\ActividadConvenioViewModel.cs" />
     <Compile Include="ViewModels\CondicionConvenio\ListCodicionConvenioViewModel.cs" />
+    <Compile Include="ViewModels\Convenios\ConvenioFormViewModel.cs" />
+    <Compile Include="ViewModels\Convenios\DetailConvenioViewModel.cs" />
     <Compile Include="ViewModels\Dependencia\ListDependenciaViewModel.cs" />
     <Compile Include="ViewModels\Indicador\ListIndicadorViewModel.cs" />
     <Compile Include="ViewModels\Indicador\IndicadorFormViewModel.cs" />
     <Compile Include="ViewModels\Convenios\ListCoveniosViewModel.cs" />
+    <Compile Include="ViewModels\Insititucion\ListInstitucionViewModel.cs" />
+    <Compile Include="ViewModels\ProgramaConvenio\ProgramaConvenioViewModel.cs" />
+    <Compile Include="ViewModels\ProponenteExterno\ListProponenteExternoViewModel.cs" />
+    <Compile Include="ViewModels\ProponenteExterno\ProponenteExternoViewModel.cs" />
     <Compile Include="ViewModels\Proponente\ListProponenteViewModel.cs" />
     <Compile Include="ViewModels\Proponente\ProponenteFormViewModel.cs" />
     <Compile Include="ViewModels\UnidadMedida\ListUnidadMedidaViewModel.cs" />
@@ -320,12 +423,82 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\background1.jpg" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\bussines3.jpg" />
+    <Content Include="Images\imagenfact1.png" />
+    <Content Include="Images\imagenfact2.png" />
+    <Content Include="Images\imagenfact3.png" />
+    <Content Include="Images\img-banner1.jpg" />
+    <Content Include="Images\img-banner2.jpg" />
+    <Content Include="Images\img-banner3.jpg" />
+    <Content Include="Images\img-banner4.jpg" />
+    <Content Include="Images\img-bannera.jpg" />
+    <Content Include="Images\img-bannerb.jpg" />
+    <Content Include="Images\img-bannerc.jpg" />
+    <Content Include="Images\img-bannerd.jpg" />
+    <Content Include="Images\img-factura.jpg" />
+    <Content Include="Images\img-publicidad1.jpg" />
+    <Content Include="Images\img-publicidad2.jpg" />
+    <Content Include="Images\img-publicidad3.jpg" />
+    <Content Include="Images\img-user.jpg" />
+    <Content Include="Images\img-user.png" />
+    <Content Include="Images\logo-asistencia.jpg" />
+    <Content Include="Images\naranja.png" />
+    <Content Include="Images\rojo.png" />
+    <Content Include="Images\verde - copia.png" />
+    <Content Include="Images\verde.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -348,12 +521,24 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="Properties\PublishProfiles\GestionRENI - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\gestionRENI - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\SistemaGestionRENI2018 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SistemaGestionRENI20180823014630 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SistemaGestionRENI20180903074427 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -414,13 +599,21 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Proponente\Index.cshtml" />
-    <Content Include="Views\Proponente\New.cshtml" />
+    <Content Include="Views\Proponente\ProponenteForm.cshtml" />
     <Content Include="Views\UnidadMedida\Index.cshtml" />
-    <Content Include="Views\UnidadMedida\New.cshtml" />
+    <Content Include="Views\UnidadMedida\UnidadMedidaForm.cshtml" />
     <Content Include="Views\Indicador\Index.cshtml" />
-    <Content Include="Views\Indicador\New.cshtml" />
+    <Content Include="Views\Indicador\IndicadorForm.cshtml" />
     <Content Include="Views\CondicionConvenio\Index.cshtml" />
     <Content Include="Views\CondicionConvenio\New.cshtml" />
+    <Content Include="Views\Convenio\ConvenioForm.cshtml" />
+    <Content Include="Views\Convenio\Details.cshtml" />
+    <Content Include="Views\ActividadConvenio\ActividadConvenioForm.cshtml" />
+    <Content Include="Views\Institucion\Index.cshtml" />
+    <Content Include="Views\Institucion\InstitucionForm.cshtml" />
+    <Content Include="Views\ProponenteExterno\Index.cshtml" />
+    <Content Include="Views\ProponenteExterno\ProponenteExternoForm.cshtml" />
+    <Content Include="Views\ProgramaConvenio\ProgramaConvenioForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -484,6 +677,72 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808200516005_IndicadorValor.resx">
       <DependentUpon>201808200516005_IndicadorValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808210247253_ActivoProponente.resx">
+      <DependentUpon>201808210247253_ActivoProponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808222302206_UnidadMedidaDescripcion.resx">
+      <DependentUpon>201808222302206_UnidadMedidaDescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230033152_AlcanceConvenio.resx">
+      <DependentUpon>201808230033152_AlcanceConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230033509_AlcanceFill.resx">
+      <DependentUpon>201808230033509_AlcanceFill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230039122_AddCodigos.resx">
+      <DependentUpon>201808230039122_AddCodigos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230040158_AddCodigosUpdateInsert.resx">
+      <DependentUpon>201808230040158_AddCodigosUpdateInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230106096_AddCodigos1.resx">
+      <DependentUpon>201808230106096_AddCodigos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230117093_AddCodigos2.resx">
+      <DependentUpon>201808230117093_AddCodigos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230122476_VigenciaHasta.resx">
+      <DependentUpon>201808230122476_VigenciaHasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230134339_PkConvenio.resx">
+      <DependentUpon>201808230134339_PkConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230205369_ErroresConRequireds.resx">
+      <DependentUpon>201808230205369_ErroresConRequireds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230240201_CamposExtraConvenio.resx">
+      <DependentUpon>201808230240201_CamposExtraConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230248507_CamposExtraConvenio1.resx">
+      <DependentUpon>201808230248507_CamposExtraConvenio1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230419458_AddTipoActividadConvenioData.resx">
+      <DependentUpon>201808230419458_AddTipoActividadConvenioData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230456426_ActivoActividadConvenio.resx">
+      <DependentUpon>201808230456426_ActivoActividadConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230609397_ProgramaInfo.resx">
+      <DependentUpon>201808230609397_ProgramaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809021635220_AddInstitucion2.resx">
+      <DependentUpon>201809021635220_AddInstitucion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809021701321_AddPropExterno.resx">
+      <DependentUpon>201809021701321_AddPropExterno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809031045463_AddConvenioPropExt.resx">
+      <DependentUpon>201809031045463_AddConvenioPropExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809031103128_AddConvenioPropExt2.resx">
+      <DependentUpon>201809031103128_AddConvenioPropExt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809031115005_AddProgramaConvenio22.resx">
+      <DependentUpon>201809031115005_AddProgramaConvenio22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809031218516_AddProgramaConvenio3.resx">
+      <DependentUpon>201809031218516_AddProgramaConvenio3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

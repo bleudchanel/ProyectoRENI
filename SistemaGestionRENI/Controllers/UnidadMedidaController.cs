@@ -32,15 +32,53 @@ namespace SistemaGestionRENI.Controllers
 
         public ActionResult New()
         {
-            return View();
+            return View("UnidadMedidaForm");
         }
 
         public ActionResult Save(UnidadMedida unidadMedida)
         {
-            unidadMedida.Activo = true;
-            _context.UnidadMedidaSet.Add(unidadMedida);
+            if (unidadMedida.Id == 0)
+            {
+                unidadMedida.Activo = true;
+                _context.UnidadMedidaSet.Add(unidadMedida);
+            }
+            else
+            {
+                var unidadMedidaInDb =
+                    _context.UnidadMedidaSet.SingleOrDefault(o => o.Id == unidadMedida.Id);
+                if (unidadMedidaInDb == null)
+                    return HttpNotFound();
+                unidadMedidaInDb.Nombre = unidadMedida.Nombre;
+                unidadMedidaInDb.Descripcion = unidadMedida.Descripcion;
+                //unidadMedidaInDb.Valor = newIndicadorViewModel.Indicador.Valor;
+            }
+
+            //_context.SaveChanges();
+
+            //unidadMedida.Activo = true;
+            //_context.UnidadMedidaSet.Add(unidadMedida);
             _context.SaveChanges();
             return RedirectToAction("Index", "UnidadMedida");
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            var unidadMedida = _context.UnidadMedidaSet.SingleOrDefault(o => o.Id == Id);
+            if (unidadMedida == null)
+                return HttpNotFound();
+
+            unidadMedida.Activo = false;
+            _context.SaveChanges();
+            return RedirectToAction("Index","UnidadMedida");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var unidadMedida = _context.UnidadMedidaSet.SingleOrDefault(o => o.Id == id);
+            if (unidadMedida == null)
+                return HttpNotFound();
+
+            return View("UnidadMedidaForm", unidadMedida);
         }
     }
 }

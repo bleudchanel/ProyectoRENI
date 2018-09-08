@@ -1,0 +1,57 @@
+﻿@model SistemaGestionRENI.NewProponenteViewModel
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        @*<div class="row">
+                <h2>Nueva Dependencia</h2>
+            </div>*@
+        <div class="row mb-3">
+            <div class="col-md-8 m-auto">
+                <div class="card">
+
+                    @using (Html.BeginForm("Save", "Proponente", null, FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="card-header">
+                            Nuevo Proponente
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.Nombre)
+                                @Html.TextBoxFor(m => m.Proponente.Nombre, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.Descripcion)
+                                @Html.TextBoxFor(m => m.Proponente.Descripcion, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.Cargo)
+                                @Html.TextBoxFor(m => m.Proponente.Cargo, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.Email)
+                                @Html.TextBoxFor(m => m.Proponente.Email, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.Telefono)
+                                @Html.TextBoxFor(m => m.Proponente.Telefono, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Proponente.DependenciaId)
+                                @Html.DropDownListFor(m => m.Proponente.DependenciaId, new SelectList(Model.Dependencias, "Id", "Nombre"), "Seleccione Dependencia", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            @Html.HiddenFor(m => m.Proponente.Id)
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

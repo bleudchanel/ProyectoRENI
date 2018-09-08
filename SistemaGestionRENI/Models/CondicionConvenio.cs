@@ -12,6 +12,10 @@ namespace SistemaGestionRENI.Models
         [Required]
         [StringLength(250)]
         public string Nombre { get; set; }
+
+        [StringLength(300)]
+        public string Descripcion { get; set; }
+
         [Required]
         public bool Activo { get; set; }
     }

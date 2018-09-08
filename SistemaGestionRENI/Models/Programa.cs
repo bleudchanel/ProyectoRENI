@@ -13,16 +13,20 @@ namespace SistemaGestionRENI.Models
         [Required]
         [StringLength(300)]
         public string Nombre { get; set; }
-
+        [Range(1990, 2200, ErrorMessage = "Ingrese un año válido")]
         public int? AnioFirma { get; set; }
         [Required]
+        [Display(Name = "Vigencia Desde")]
         public DateTime VigenciaDesde { get; set; }
+        [Required]
+        [Display(Name = "Vigencia Desde")]
         public DateTime? VigenciaHasta { get; set; }
         [Required]
         public string Objetivo { get; set; }
         public string Obligaciones { get; set; }
         public string Derechos { get; set; }
 
+        [Required]
         public int TipoProgramaId { get; set; }
         public TipoPrograma TipoPrograma { get; set; }
 
@@ -31,10 +35,21 @@ namespace SistemaGestionRENI.Models
         public Dependencia DependenciaPrograma { get; set; }
 
         public Indicador Indicador { get; set; }
-        public int IndicadorId { get; set; }
+        public int? IndicadorId { get; set; }
+
+        [Display(Name = "Objetivo por Indicador")]
+        public int? ObjetivoIndicador { get; set; }
 
         public CondicionPrograma CondicionPrograma { get; set; }
+        [Required]
         public int CondicionProgramaId { get; set; }
+
+        public AlcanceConvenio AlcanceConvenio { get; set; }
+        [Display(Name = "Resolución")]
+        public string Resolucion { get; set; }
+
+        [Display(Name = "Correlativo Documentación")]
+        public string Correlativo { get; set; }
 
         public bool Activo { get; set; }
 

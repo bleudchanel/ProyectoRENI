@@ -25,15 +25,32 @@ namespace SistemaGestionRENI.Controllers
         public ActionResult Index()
         {
             ListDependenciaViewModel vmDependencias = new ListDependenciaViewModel();
-            vmDependencias.Dependencias = _context.DependenciaSet.Where(o => o.Estado == true).ToList();
+            vmDependencias.Dependencias = _context.DependenciaSet.Where(o => o.Activo == true).ToList();
             return View(vmDependencias);
         }
 
         [HttpPost]
         public ActionResult Save(Dependencia dependencia)
         {
-            dependencia.Estado = true;
-            _context.DependenciaSet.Add(dependencia);
+            if (dependencia.Id == 0)
+            {
+                dependencia.Activo = true;
+                _context.DependenciaSet.Add(dependencia);
+            }
+            else
+            {
+                var dependenciaInDb =
+                    _context.DependenciaSet.SingleOrDefault(o => o.Id == dependencia.Id);
+                if (dependenciaInDb == null)
+                    return HttpNotFound();
+                dependenciaInDb.Nombre = dependencia.Nombre;
+                //dependenciaInDb.EsInterno = dependencia.EsInterno;
+                dependenciaInDb.Abrev = dependencia.Abrev;
+                //dependenciaInDb.Activo = dependencia.Pais;
+            }
+
+            //dependencia.Estado = true;
+            //_context.DependenciaSet.Add(dependencia);
             _context.SaveChanges();
             return RedirectToAction("Index", "Dependencia");
         }
@@ -58,7 +75,7 @@ namespace SistemaGestionRENI.Controllers
             var condicion = _context.DependenciaSet.SingleOrDefault(o => o.Id == dependencia.Id);
             if (condicion != null)
             {
-                condicion.Estado = false;
+                condicion.Activo = false;
                 _context.SaveChanges();
             }
             else
