@@ -1,0 +1,53 @@
+﻿@model ProgramaMovilidadFormViewModel
+
+@{
+    ViewBag.Title = "ProgramaMovilidadForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section>
+    <div class="container">
+        @*<div class="row">
+                <h2>Nueva Dependencia</h2>
+            </div>*@
+        <div class="row mb-3">
+            <div class="col-md-8 m-auto">
+                <div class="card">
+
+                    @using (Html.BeginForm("Save", "ProgramaMovilidad", null, FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="card-header">
+                            Nuevo Programa de Movilidad
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProgramaMovilidad.Nombre)
+                                @Html.TextBoxFor(m => m.ProgramaMovilidad.Nombre, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProgramaMovilidad.Descripcion)
+                                @Html.TextBoxFor(m => m.ProgramaMovilidad.Descripcion, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProgramaMovilidad.FechaCreacion)
+                                @Html.TextBoxFor(m => m.ProgramaMovilidad.FechaCreacion, "{0:d MMM yyyy}", new { @class = "form-control datepicker" })
+                                @Html.ValidationMessageFor(m => m.ProgramaMovilidad.FechaCreacion)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProgramaMovilidad.ConvenioId)
+                                @Html.DropDownListFor(m => m.ProgramaMovilidad.ConvenioId, new SelectList(Model.Convenios, "Id", "Nombre"), "Seleccione Convenio Marco", new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            @Html.HiddenFor(m => m.ProgramaMovilidad.Id)
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

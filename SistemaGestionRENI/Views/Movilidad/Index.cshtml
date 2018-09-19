@@ -1,0 +1,56 @@
+﻿@model ListMovilidadViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section>
+    <container>
+        <div class="row mt-2">
+            <h2>Lista de </h2>
+        </div>
+        <div class="row my-3">
+            <a href="@Url.Action("New","Proponente", null)" class="btn btn-info">Nuevo Proponente Interno</a>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Dependencia</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var proponente in Model.Movilidades)
+                    {
+                        <tr>
+                            <th scope="row">@proponente.Id</th>
+                            <td>@proponente.NombresApellidos</td>
+                            <td>@proponente.Institucion.Abrev</td>
+                            <td>@proponente.Email</td>
+                            <td>@proponente.Telefono</td>
+                            <td>@proponente.Dependencia.Abrev</td>
+                            <td>
+                                <a class="btn btn-warning" href="@Url.Action("Edit","Proponente", new {Id = @proponente.Id})">Modificar</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete", "Proponente", new {Id = @proponente.Id})">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </container>
+</section>
+
+
+
+
+
+

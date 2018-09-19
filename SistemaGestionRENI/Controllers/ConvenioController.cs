@@ -120,6 +120,7 @@ namespace SistemaGestionRENI.Controllers
                 convenioInDb.Correlativo = convenioFormViewModel.Convenio.Correlativo;
                 convenioInDb.ObjetivoIndicador = convenioFormViewModel.Convenio.ObjetivoIndicador;
                 convenioInDb.InstitucionId = convenioFormViewModel.Convenio.InstitucionId;
+                convenioInDb.AdmiteProgramaMov = convenioFormViewModel.Convenio.AdmiteProgramaMov;
             }
 
 
@@ -244,8 +245,8 @@ namespace SistemaGestionRENI.Controllers
             var viewModel = new DetailConvenioViewModel()
             {
                 Convenio = convenio,
-                Actividades = _context.ActividadConvenioSet.Where(o => o.ConvenioId == id && o.Activo == true).Include(o => o.Indicador).Include(o => o.TipoActividadConvenio).ToList(),
-                Programas = _context.ProgramaConvenioSet.Where(o => o.ConvenioId == id && o.Activo == true).Include(o => o.Institucion).Include(o => o.Dependencia).Include(o => o.TipoPrograma).ToList()
+                Actividades = _context.ActividadConvenioSet.Where(o => o.ConvenioId == id && o.Activo == true).Include(o => o.Indicador).Include(o => o.TipoActividadConvenio).ToList()
+               // Programas = _context.ProgramaConvenioSet.Where(o => o.ConvenioId == id && o.Activo == true).Include(o => o.Institucion).Include(o => o.Dependencia).Include(o => o.TipoPrograma).ToList()
 
             };
 

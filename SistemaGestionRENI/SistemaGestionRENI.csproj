@@ -206,7 +206,9 @@
     <Compile Include="Controllers\IndicadorController.cs" />
     <Compile Include="Controllers\InstitucionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MovilidadController.cs" />
     <Compile Include="Controllers\ProgramaConvenioController.cs" />
+    <Compile Include="Controllers\ProgramaMovilidadController.cs" />
     <Compile Include="Controllers\ProponenteController.cs" />
     <Compile Include="Controllers\ProponenteExternoController.cs" />
     <Compile Include="Controllers\UnidadMedidaController.cs" />
@@ -373,6 +375,26 @@
     <Compile Include="Migrations\201809031218516_AddProgramaConvenio3.Designer.cs">
       <DependentUpon>201809031218516_AddProgramaConvenio3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809101746249_Initial2.cs" />
+    <Compile Include="Migrations\201809101746249_Initial2.Designer.cs">
+      <DependentUpon>201809101746249_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111445079_AddProgramaMovilidadDetalle.cs" />
+    <Compile Include="Migrations\201809111445079_AddProgramaMovilidadDetalle.Designer.cs">
+      <DependentUpon>201809111445079_AddProgramaMovilidadDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111506217_AddBecado.cs" />
+    <Compile Include="Migrations\201809111506217_AddBecado.Designer.cs">
+      <DependentUpon>201809111506217_AddBecado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809121348188_AddConvenioInstitucion.cs" />
+    <Compile Include="Migrations\201809121348188_AddConvenioInstitucion.Designer.cs">
+      <DependentUpon>201809121348188_AddConvenioInstitucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809121433309_AddProgramaMovilidad.cs" />
+    <Compile Include="Migrations\201809121433309_AddProgramaMovilidad.Designer.cs">
+      <DependentUpon>201809121433309_AddProgramaMovilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ActividadConvenio.cs" />
@@ -388,8 +410,10 @@
     <Compile Include="Models\Indicador.cs" />
     <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movilidad.cs" />
     <Compile Include="Models\Programa.cs" />
     <Compile Include="Models\ProgramaConvenio.cs" />
+    <Compile Include="Models\ProgramaMovilidad.cs" />
     <Compile Include="Models\Proponente.cs" />
     <Compile Include="Models\ProponenteExterno.cs" />
     <Compile Include="Models\Solicitante.cs" />
@@ -408,7 +432,11 @@
     <Compile Include="ViewModels\Indicador\IndicadorFormViewModel.cs" />
     <Compile Include="ViewModels\Convenios\ListCoveniosViewModel.cs" />
     <Compile Include="ViewModels\Insititucion\ListInstitucionViewModel.cs" />
+    <Compile Include="ViewModels\Movilidad\ListMovilidadViewModel.cs" />
+    <Compile Include="ViewModels\Movilidad\MovilidadFormViewModel.cs" />
     <Compile Include="ViewModels\ProgramaConvenio\ProgramaConvenioViewModel.cs" />
+    <Compile Include="ViewModels\ProgramaMovilidad\ListProgramaMovilidadViewModel.cs" />
+    <Compile Include="ViewModels\ProgramaMovilidad\ProgramaMovilidadFormViewModel.cs" />
     <Compile Include="ViewModels\ProponenteExterno\ListProponenteExternoViewModel.cs" />
     <Compile Include="ViewModels\ProponenteExterno\ProponenteExternoViewModel.cs" />
     <Compile Include="ViewModels\Proponente\ListProponenteViewModel.cs" />
@@ -614,6 +642,10 @@
     <Content Include="Views\ProponenteExterno\Index.cshtml" />
     <Content Include="Views\ProponenteExterno\ProponenteExternoForm.cshtml" />
     <Content Include="Views\ProgramaConvenio\ProgramaConvenioForm.cshtml" />
+    <Content Include="Views\Movilidad\Index.cshtml" />
+    <Content Include="Views\Movilidad\ConvenioForm.cshtml" />
+    <Content Include="Views\ProgramaMovilidad\Index.cshtml" />
+    <Content Include="Views\ProgramaMovilidad\ProgramaMovilidadForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -743,6 +775,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809031218516_AddProgramaConvenio3.resx">
       <DependentUpon>201809031218516_AddProgramaConvenio3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809101746249_Initial2.resx">
+      <DependentUpon>201809101746249_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111445079_AddProgramaMovilidadDetalle.resx">
+      <DependentUpon>201809111445079_AddProgramaMovilidadDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111506217_AddBecado.resx">
+      <DependentUpon>201809111506217_AddBecado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809121348188_AddConvenioInstitucion.resx">
+      <DependentUpon>201809121348188_AddConvenioInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809121433309_AddProgramaMovilidad.resx">
+      <DependentUpon>201809121433309_AddProgramaMovilidad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

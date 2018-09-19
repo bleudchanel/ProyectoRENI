@@ -116,5 +116,8 @@ namespace SistemaGestionRENI.Models
         public int? Dependencia3Id { get; set; }
         public Dependencia Dependencia3 { get; set; }
 
+        [Display(Name ="Admite Programa de Movilidad")]
+        public bool AdmiteProgramaMov { get; set; }
+
     }
 }

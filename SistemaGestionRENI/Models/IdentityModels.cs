@@ -45,14 +45,14 @@ namespace SistemaGestionRENI.Models
         public DbSet<TipoActividadConvenio> TipoActividadConvenioSet { get; set; }
         public DbSet<ActividadConvenio> ActividadConvenioSet { get; set; }
         public DbSet<Programa> _ProgramaSet { get; set; }
-        public DbSet<ProgramaConvenio> ProgramaConvenioSet { get; set; }
+       // public DbSet<ProgramaConvenio> ProgramaConvenioSet { get; set; }
         public DbSet<ActividadPrograma> ActividadProgramaSet { get; set; }
         public DbSet<TipoActividadPrograma> TipoActividadProgramaSet { get; set; }
         public DbSet<TipoPrograma> TipoProgramaSet { get; set; }
         public DbSet<AlcanceConvenio> AlcanceConvenioSet { get; set; }
         public DbSet<Institucion> InstitucionSet { get; set; }
-
-
+        public DbSet<ProgramaMovilidad> ProgramaMovilidadSet { get; set; }
+        public DbSet<Movilidad> MovilidadSet { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -59,23 +59,23 @@ namespace SistemaGestionRENI.Controllers
             {
                 programaConvenioView.ProgramaConvenio.Activo = true;
                 programaConvenioView.ProgramaConvenio.ConvenioId = programaConvenioView.ConvenioId;
-                _context.ProgramaConvenioSet.Add(programaConvenioView.ProgramaConvenio);
+                //_context.ProgramaConvenioSet.Add(programaConvenioView.ProgramaConvenio);
             }
             else
             {
-                var programaInDb =
-                    _context.ProgramaConvenioSet.SingleOrDefault(o => o.Id == programaConvenioView.ProgramaConvenio.Id);
-                if (programaInDb == null)
-                    return HttpNotFound();
-                programaInDb.Nombres = programaConvenioView.ProgramaConvenio.Nombres;
-                programaInDb.DocumentoIdentidad = programaConvenioView.ProgramaConvenio.DocumentoIdentidad;
-                programaInDb.InstitucionId = programaConvenioView.ProgramaConvenio.InstitucionId;
-                programaInDb.DependenciaId = programaConvenioView.ProgramaConvenio.DependenciaId;
-                programaInDb.ProgramaMovEst = programaConvenioView.ProgramaConvenio.ProgramaMovEst;
-                programaInDb.TipoProgramaId = programaConvenioView.ProgramaConvenio.TipoProgramaId;
-                //programaInDb.IndicadorId = programaConvenioView.ProgramaConvenio.IndicadorId;
-                //programaInDb.Avance = programaConvenioView.ProgramaConvenio.Avance;
-                programaInDb.ConvenioId = programaConvenioView.ConvenioId;
+                //var programaInDb =
+                //    _context.ProgramaConvenioSet.SingleOrDefault(o => o.Id == programaConvenioView.ProgramaConvenio.Id);
+                //if (programaInDb == null)
+                //    return HttpNotFound();
+                //programaInDb.Nombres = programaConvenioView.ProgramaConvenio.Nombres;
+                //programaInDb.DocumentoIdentidad = programaConvenioView.ProgramaConvenio.DocumentoIdentidad;
+                //programaInDb.InstitucionId = programaConvenioView.ProgramaConvenio.InstitucionId;
+                //programaInDb.DependenciaId = programaConvenioView.ProgramaConvenio.DependenciaId;
+                //programaInDb.ProgramaMovEst = programaConvenioView.ProgramaConvenio.ProgramaMovEst;
+                //programaInDb.TipoProgramaId = programaConvenioView.ProgramaConvenio.TipoProgramaId;
+                ////programaInDb.IndicadorId = programaConvenioView.ProgramaConvenio.IndicadorId;
+                ////programaInDb.Avance = programaConvenioView.ProgramaConvenio.Avance;
+                //programaInDb.ConvenioId = programaConvenioView.ConvenioId;
             }
             _context.SaveChanges();
             return RedirectToAction("Index", "Convenio");
@@ -83,34 +83,34 @@ namespace SistemaGestionRENI.Controllers
 
         public ActionResult Delete(int Id)
         {
-            var convenio = _context.ProgramaConvenioSet.SingleOrDefault(o => o.Id == Id);
-            if (convenio != null)
-            {
-                convenio.Activo = false;
-                _context.SaveChanges();
-            }
-            else
-            {
-                return HttpNotFound();
-            }
+            //var convenio = _context.ProgramaConvenioSet.SingleOrDefault(o => o.Id == Id);
+            //if (convenio != null)
+            //{
+            //    convenio.Activo = false;
+            //    _context.SaveChanges();
+            //}
+            //else
+            //{
+            //    return HttpNotFound();
+            //}
 
             return RedirectToAction("Index", "Convenio");
         }
 
         public ActionResult Edit(int Id, int ConvenioIdMaster)
         {
-            var programaConvenio = _context.ProgramaConvenioSet.SingleOrDefault(d => d.Id == Id);
-            if (programaConvenio == null)
-                return HttpNotFound();
+            //var programaConvenio = _context.ProgramaConvenioSet.SingleOrDefault(d => d.Id == Id);
+            //if (programaConvenio == null)
+            //    return HttpNotFound();
 
-            var viewModel = new ProgramaConvenioViewModel()
-            {
-                ProgramaConvenio = programaConvenio,
-                Dependencias = _context.DependenciaSet.Where(o => o.Activo == true).ToList(),
-                Instituciones = _context.InstitucionSet.Where(o => o.Activo == true).ToList(),
-                TiposPrograma = _context.TipoProgramaSet.Where(o => o.Activo == true).ToList(),
-                ConvenioId = ConvenioIdMaster
-            };
+            var viewModel = new ProgramaConvenioViewModel();
+            //{
+            //    ProgramaConvenio = programaConvenio,
+            //    Dependencias = _context.DependenciaSet.Where(o => o.Activo == true).ToList(),
+            //    Instituciones = _context.InstitucionSet.Where(o => o.Activo == true).ToList(),
+            //    TiposPrograma = _context.TipoProgramaSet.Where(o => o.Activo == true).ToList(),
+            //    ConvenioId = ConvenioIdMaster
+            //};
 
             return View("ProgramaConvenioForm", viewModel);
         }
