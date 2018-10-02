@@ -32,7 +32,7 @@
                     {
                         <tr>
                             <th scope="row">@programaMovilidad.Id</th>
-                            <td>@programaMovilidad.Nombre</td>
+                            <td><a href="@Url.Action("Details","ProgramaMovilidad", new {Id = programaMovilidad.Id})">@programaMovilidad.Nombre</a></td>
                             <td>@programaMovilidad.Descripcion</td>
                             <td>@programaMovilidad.Convenio.Nombre</td>
                             <td>@programaMovilidad.Convenio.Institucion.Abrev</td>

@@ -1,0 +1,163 @@
+﻿@model SistemaGestionRENI.DetailProgramaConvenioViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="header" class="py-4  text-white">
+    <div class="col text-center bg-primary py-3">
+        <h3 class="font-weight-bold">@Model.ProgramaMovilidad.Nombre</h3>
+        @*<a href="@Url.Action("Index", "Tema", new { IdSeccion = Model.IdSeccion })" class="btn btn-outline-danger text-white ml-2">@Resources.Regresar</a>*@
+    </div>
+</section>
+<section>
+    <container>
+        <!-- Contenido Convenio -->
+        <div class="row">
+            <div class="col">
+                <div class="card mb-1">
+                    <div class="card-header bg-dark text-white py-0">
+                        <span class="fa fa-address-book" data-toggle="tooltip" aria-hidden="true"></span><i class="pl-2">@Model.ProgramaMovilidad.Nombre</i>
+                    </div>
+                    <div class="card-body py-1">
+                        <div>
+                            <ul>
+                                <li>
+                                    <strong>Descripción: </strong> @Model.ProgramaMovilidad.Descripcion
+                                </li>
+                                <li><strong>Fecha de Creación: </strong> @Model.ProgramaMovilidad.FechaCreacion.Date.ToString("yyyy MMMM dd") </li>
+                                <li>
+                                    <strong>Convenio: </strong>
+                                    <p>@Model.ProgramaMovilidad.Convenio.Nombre</p>
+                                </li>
+                                <li>
+                                    <strong>Descripción de Convenio: </strong>
+                                    <p>@Model.ProgramaMovilidad.Convenio.Descripcion</p>
+                                </li>
+                                <li>
+                                    <strong>Dependencia de Convenio: </strong>
+                                    <p>@Model.ProgramaMovilidad.Convenio.Descripcion</p>
+                                </li>
+                                <li>
+                                    <strong>Institución de Convenio: </strong>
+                                    <p>@Model.ProgramaMovilidad.Convenio.Institucion.Nombre</p>
+                                </li>
+                                @*<li>
+                                    <strong>Dependencia Principal: </strong> @Model.Convenio.DependenciaConvenio.Nombre
+                                </li>
+                                <li>
+                                    <strong>Institución Externa: </strong> @Model.Convenio.Institucion.Nombre - <strong>Ubicación:</strong> @Model.Convenio.Institucion.Ubicacion (@(@Model.Convenio.Institucion.EsPrivado == true ? "Privado" : "Estatal"))
+                                    <strong>Actividad: </strong> @Model.Convenio.Institucion.ActividadInstitucion
+                                </li>
+                                <li>
+                                    <strong>Indicador: </strong> @Model.Convenio.Indicador.Nombre <strong>Objetivo: </strong> 0/@Model.Convenio.ObjetivoIndicador
+                                </li>
+                                <li>
+                                    <strong>Alcance: </strong> @Model.Convenio.AlcanceConvenio.Nombre
+                                </li>*@
+                                @*<li>
+            <strong>Resolución: </strong> @Model.Convenio.Resolucion
+        </li>
+        <li>
+            <strong>Correlativo: </strong> @Model.Convenio.Correlativo
+        </li>
+        <li>
+            <strong>Clase: </strong> @Model.Convenio.ClaseConvenio.Nombre
+        </li>
+        <li>
+            <strong>Condición: </strong> @Model.Convenio.CondicionConvenio.Nombre
+        </li>
+        <li>
+            <strong>Proponente Interno: </strong>
+            <ul>
+                <li><strong>Nombre: </strong> @Model.Convenio.ProponenteInterno.Nombre</li>
+                <li><strong>Dependencia: </strong> @Model.Convenio.ProponenteInterno.Dependencia.Nombre - <strong>Locación: </strong> @Model.Convenio.ProponenteInterno.Dependencia.Abrev</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Proponente Externo: </strong>
+            <ul>
+                <li><strong>Nombre: </strong> @Model.Convenio.ProponenteExterno.Nombre</li>
+                <li><strong>Dependencia: </strong> @Model.Convenio.ProponenteExterno.Instituction.Nombre - <strong>Locación: </strong> @Model.Convenio.ProponenteExterno.Instituction.Ubicacion</li>
+            </ul>
+        </li>*@
+
+                            </ul>
+                        </div>
+                        @*<div style="text-align: right"><small><i><span data-toggle="tooltip" title="@Model.DaysAgo">@Resources.PublicadoPor <a href="/Perfil/Index/?Usuario=@Model.NombreUsuarioCreador">@Model.NombreUsuarioCreador</a> [@Model.FechaCreacion]</span></i></small></div>*@
+                        <div style="text-align: left">
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="card-footer py-1">
+                        <div class="row">
+                            <ul>
+                                <li>InformeEjemplo.docx <a href="#">Descargar</a></li>
+                                <li>InformeEjemplo2.xlsx <a href="#">Descargar</a></li>
+                                <li>InformeEjemplo3.pdf <a href="#">Descargar</a></li>
+                                <li>InformeEjemplo4.txt <a href="#">Descargar</a></li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <a href="@Url.Action("New", "Movilidad", new {Id = @Model.ProgramaMovilidad.Id})" class="btn btn-info">Nueva Movilidad</a>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                @foreach (var movilidad in Model.Movilidades)
+                {
+                    <div class="card mb-1 py-0">
+                        <div class="card-header bg-info text-white py-0">
+                            <div class="float-left"><span class="fa fa-address-card" data-toggle="tooltip" aria-hidden="true"></span></div>
+                            <div class="float-left pl-2">Actividad de Convenio</div>
+                        </div>
+                        <div class="card-body py-1">
+                            <ul>
+                                <li><strong>@movilidad.NombresApellidos</strong></li>
+                                <li><strong>Semestre: </strong> @movilidad.Semestre</li>
+                                <li>
+                                    <strong>Carrera: </strong>
+                                    <p>
+                                        @movilidad.Carrera
+                                    </p>
+                                </li>
+                                <li><strong>Fecha Nacimiento: </strong> @movilidad.FechaNacimiento.Date.ToString("yyyy MMMM dd")</li>
+                                <li><strong>Nacionalidad: </strong> @movilidad.Nacionalidad</li>
+                                <li><strong>Aclaración: </strong> @movilidad.Aclaración</li>
+                                <li><strong>Carrera: </strong> @movilidad.Carrera</li>
+                            </ul>
+
+                        </div>
+                        <div class="card-footer py-1">
+                            <div class="row">
+                                <ul>
+                                    <li>InformeEjemplo.docx <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo2.xlsx <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo3.pdf <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo4.txt <a href="#">Descargar</a></li>
+                                </ul>
+                            </div>
+                            <span class="pull-left"><a href="@Url.Action("Edit", "Movilidad", new {Id = movilidad.Id, ProgramaMovilidadIdMaster = @Model.ProgramaMovilidad.Id})" class="btn btn-sm btn-outline-warning">Modificar</a></span>
+                            <span class="pull-right"><a href="@Url.Action("Delete", "Movilidad", new {Id = movilidad.Id})" class="btn btn-sm btn-outline-danger">Eliminar</a></span>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </container>
+</section>
+
+
+
+
+

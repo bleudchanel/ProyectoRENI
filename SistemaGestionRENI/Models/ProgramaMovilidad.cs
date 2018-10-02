@@ -17,6 +17,10 @@ namespace SistemaGestionRENI.Models
         public bool Activo { get; set; }
         public DateTime FechaCreacion { get; set; }
 
+        //public TipoPrograma TipoPrograma { get; set; }
+        //[Display(Name="Tipo de Programa")]
+        //public int TipoProgramaId { get; set; }
+
         public Convenio Convenio { get; set; }
         [Display(Name = "Convenio Base")]
         public int ConvenioId { get; set; }

@@ -109,82 +109,82 @@
             </div>
         </div>
 
+        @*<div class="row">
+        <div class="col-md-6">
+            @foreach (var movilidad in Model.Programas)
+            {
+                <div class="card mb-1 py-0">
+                    <div class="card-header bg-light py-0">
+                        <div class="float-left"><span class="fa fa-address-card" data-toggle="tooltip" aria-hidden="true"></span></div>
+                        <div class="float-left pl-2">Movilidad</div>
+                    </div>
+                    <div class="card-body py-1">
+                        <ul>
+                            <li><strong>Nombres: </strong> @movilidad.Nombres</li>
+                            <li><strong>Documento: </strong> @movilidad.DocumentoIdentidad</li>
+                            <li>
+                                <strong>Universidad de Origen: </strong> @movilidad.Institucion.Nombre (@(@movilidad.Institucion.EsPrivado == true ? "Privado" : "Estatal"))
+                            </li>
+                            <li><strong>Destino: </strong> @movilidad.Dependencia.Nombre</li>
+                            <li><strong>Tipo de Movilidad: </strong> @movilidad.TipoPrograma.Nombre</li>
+                            <li><strong>Programa: </strong> @movilidad.ProgramaMovEst</li>
+                        </ul>
+
+                    </div>
+                    <div class="card-footer py-1">
+                        <span class="pull-left"><a href="@Url.Action("Edit", "ProgramaConvenio", new {Id = @movilidad.Id, ConvenioIdMaster = @Model.Convenio.Id})" class="btn btn-sm btn-outline-warning">Modificar</a></span>
+                        <span class="pull-right"><a href="@Url.Action("Delete", "ProgramaConvenio", new {Id = @movilidad.Id})" class="btn btn-sm btn-outline-danger">Eliminar</a></span>
+                    </div>
+                </div>
+
+            }
+        </div>*@
+
+
         <div class="row">
-            <div class="col-md-6">
-                @foreach (var movilidad in Model.Programas)
+            <div class="col-md-10">
+                @foreach (var actividad in Model.Actividades)
                 {
                     <div class="card mb-1 py-0">
-                        <div class="card-header bg-light py-0">
+                        <div class="card-header bg-info text-white py-0">
                             <div class="float-left"><span class="fa fa-address-card" data-toggle="tooltip" aria-hidden="true"></span></div>
-                            <div class="float-left pl-2">Movilidad</div>
+                            <div class="float-left pl-2">Actividad de Convenio</div>
                         </div>
                         <div class="card-body py-1">
                             <ul>
-                                <li><strong>Nombres: </strong> @movilidad.Nombres</li>
-                                <li><strong>Documento: </strong> @movilidad.DocumentoIdentidad</li>
+                                <li><strong>@actividad.Nombre</strong></li>
+                                <li><strong>Descripción: </strong> @actividad.Descripcion</li>
                                 <li>
-                                    <strong>Universidad de Origen: </strong> @movilidad.Institucion.Nombre (@(@movilidad.Institucion.EsPrivado == true ? "Privado" : "Estatal"))
+                                    <strong>Observaciones: </strong>
+                                    <p>
+                                        @actividad.Observaciones
+                                    </p>
                                 </li>
-                                <li><strong>Destino: </strong> @movilidad.Dependencia.Nombre</li>
-                                <li><strong>Tipo de Movilidad: </strong> @movilidad.TipoPrograma.Nombre</li>
-                                <li><strong>Programa: </strong> @movilidad.ProgramaMovEst</li>
+                                <li><strong>Fecha: </strong> @actividad.Fecha.Date.ToString("yyyy MMMM dd")</li>
+                                <li><strong>Tipo de Actividad: </strong> @actividad.TipoActividadConvenio.Nombre</li>
+                                <li><strong>Indicador: </strong> @actividad.Indicador.Nombre</li>
+                                <li><strong>Avance: </strong> @actividad.Avance</li>
                             </ul>
 
                         </div>
                         <div class="card-footer py-1">
-                            <span class="pull-left"><a href="@Url.Action("Edit", "ProgramaConvenio", new {Id = @movilidad.Id, ConvenioIdMaster = @Model.Convenio.Id})" class="btn btn-sm btn-outline-warning">Modificar</a></span>
-                            <span class="pull-right"><a href="@Url.Action("Delete", "ProgramaConvenio", new {Id = @movilidad.Id})" class="btn btn-sm btn-outline-danger">Eliminar</a></span>
+                            <div class="row">
+                                <ul>
+                                    <li>InformeEjemplo.docx <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo2.xlsx <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo3.pdf <a href="#">Descargar</a></li>
+                                    <li>InformeEjemplo4.txt <a href="#">Descargar</a></li>
+                                </ul>
+                            </div>
+                            <span class="pull-left"><a href="@Url.Action("Edit", "ActividadConvenio", new {Id = @actividad.Id, ConvenioIdMaster = @Model.Convenio.Id})" class="btn btn-sm btn-outline-warning">Modificar</a></span>
+                            <span class="pull-right"><a href="@Url.Action("Delete", "ActividadConvenio", new {Id = @actividad.Id})" class="btn btn-sm btn-outline-danger">Eliminar</a></span>
                         </div>
                     </div>
 
                 }
             </div>
-       
-
-
-        <div class="col-md-6">
-            @foreach (var actividad in Model.Actividades)
-            {
-                <div class="card mb-1 py-0">
-                    <div class="card-header bg-info text-white py-0">
-                        <div class="float-left"><span class="fa fa-address-card" data-toggle="tooltip" aria-hidden="true"></span></div>
-                        <div class="float-left pl-2">Actividad de Convenio</div>
-                    </div>
-                    <div class="card-body py-1">
-                        <ul>
-                            <li><strong>@actividad.Nombre</strong></li>
-                            <li><strong>Descripción: </strong> @actividad.Descripcion</li>
-                            <li>
-                                <strong>Observaciones: </strong>
-                                <p>
-                                    @actividad.Observaciones
-                                </p>
-                            </li>
-                            <li><strong>Fecha: </strong> @actividad.Fecha.Date.ToString("yyyy MMMM dd")</li>
-                            <li><strong>Tipo de Actividad: </strong> @actividad.TipoActividadConvenio.Nombre</li>
-                            <li><strong>Indicador: </strong> @actividad.Indicador.Nombre</li>
-                            <li><strong>Avance: </strong> @actividad.Avance</li>
-                        </ul>
-
-                    </div>
-                    <div class="card-footer py-1">
-                        <div class="row">
-                            <ul>
-                                <li>InformeEjemplo.docx <a href="#">Descargar</a></li>
-                                <li>InformeEjemplo2.xlsx <a href="#">Descargar</a></li>
-                                <li>InformeEjemplo3.pdf <a href="#">Descargar</a></li>
-                                <li>InformeEjemplo4.txt <a href="#">Descargar</a></li>
-                            </ul>
-                        </div>
-                        <span class="pull-left"><a href="@Url.Action("Edit", "ActividadConvenio", new {Id = @actividad.Id, ConvenioIdMaster = @Model.Convenio.Id})" class="btn btn-sm btn-outline-warning">Modificar</a></span>
-                        <span class="pull-right"><a href="@Url.Action("Delete", "ActividadConvenio", new {Id = @actividad.Id})" class="btn btn-sm btn-outline-danger">Eliminar</a></span>
-                    </div>
-                </div>
-
-            }
         </div>
-        </div>
-        </container>
+    </container>
 </section>
 
 

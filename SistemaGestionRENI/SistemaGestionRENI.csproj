@@ -395,6 +395,18 @@
     <Compile Include="Migrations\201809121433309_AddProgramaMovilidad.Designer.cs">
       <DependentUpon>201809121433309_AddProgramaMovilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810011530233_Base.cs" />
+    <Compile Include="Migrations\201810011530233_Base.Designer.cs">
+      <DependentUpon>201810011530233_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810022022010_CambioProgramaMovilidad.cs" />
+    <Compile Include="Migrations\201810022022010_CambioProgramaMovilidad.Designer.cs">
+      <DependentUpon>201810022022010_CambioProgramaMovilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810022108115_ProgMovilidad_RemoveTipo.cs" />
+    <Compile Include="Migrations\201810022108115_ProgMovilidad_RemoveTipo.Designer.cs">
+      <DependentUpon>201810022108115_ProgMovilidad_RemoveTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ActividadConvenio.cs" />
@@ -411,12 +423,12 @@
     <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movilidad.cs" />
-    <Compile Include="Models\Programa.cs" />
-    <Compile Include="Models\ProgramaConvenio.cs" />
+    <Compile Include="Models\Deprecated\Programa.cs" />
+    <Compile Include="Models\Deprecated\ProgramaConvenio.cs" />
     <Compile Include="Models\ProgramaMovilidad.cs" />
     <Compile Include="Models\Proponente.cs" />
     <Compile Include="Models\ProponenteExterno.cs" />
-    <Compile Include="Models\Solicitante.cs" />
+    <Compile Include="Models\Deprecated\Solicitante.cs" />
     <Compile Include="Models\TipoActividadConvenio.cs" />
     <Compile Include="Models\TipoActividadPrograma.cs" />
     <Compile Include="Models\TipoPrograma.cs" />
@@ -435,6 +447,7 @@
     <Compile Include="ViewModels\Movilidad\ListMovilidadViewModel.cs" />
     <Compile Include="ViewModels\Movilidad\MovilidadFormViewModel.cs" />
     <Compile Include="ViewModels\ProgramaConvenio\ProgramaConvenioViewModel.cs" />
+    <Compile Include="ViewModels\ProgramaMovilidad\DetailProgramaConvenioViewModel.cs" />
     <Compile Include="ViewModels\ProgramaMovilidad\ListProgramaMovilidadViewModel.cs" />
     <Compile Include="ViewModels\ProgramaMovilidad\ProgramaMovilidadFormViewModel.cs" />
     <Compile Include="ViewModels\ProponenteExterno\ListProponenteExternoViewModel.cs" />
@@ -646,6 +659,7 @@
     <Content Include="Views\Movilidad\ConvenioForm.cshtml" />
     <Content Include="Views\ProgramaMovilidad\Index.cshtml" />
     <Content Include="Views\ProgramaMovilidad\ProgramaMovilidadForm.cshtml" />
+    <Content Include="Views\ProgramaMovilidad\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -790,6 +804,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809121433309_AddProgramaMovilidad.resx">
       <DependentUpon>201809121433309_AddProgramaMovilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810011530233_Base.resx">
+      <DependentUpon>201810011530233_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810022022010_CambioProgramaMovilidad.resx">
+      <DependentUpon>201810022022010_CambioProgramaMovilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810022108115_ProgMovilidad_RemoveTipo.resx">
+      <DependentUpon>201810022108115_ProgMovilidad_RemoveTipo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

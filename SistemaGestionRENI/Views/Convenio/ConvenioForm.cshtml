@@ -151,6 +151,14 @@
                                 @Html.DropDownListFor(m => m.Convenio.ConvenioPadreId, new SelectList(Model.ConveniosPadre, "Id", "Nombre"), "Seleccione Proponente Externo", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.Convenio.ConvenioPadreId)
                             </div>
+                            <hr />
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.CheckBoxFor(m => m.Convenio.AdmiteProgramaMov) ¿Admite Movilidad?
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-footer">
                             @Html.HiddenFor(m => m.Convenio.Id)
